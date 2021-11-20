@@ -7,6 +7,9 @@
 </head>
 <body>  
 
+<form style ="background-image: url('C:\Users\User\Desktop');">  
+</form> 
+
 <?php
 $degreeCount = 0;
 $nameErr = $emailErr = $genderErr = $dateOfBirthErr = $bloodGroup = $degree1 = $degree2 = $degree3 = $degree4 = "";
