@@ -48,14 +48,14 @@
 
     <form method="post">
 
-        Go back to : <a href="Train_Manager_Home.php">Home</a><br><br>
+        Go back to : <a href="Bus_Manager_Home.php">Home</a><br><br>
         <fieldset>
-            <legend><b>BOOKED TRAIN TICKETS</b></legend><br>
+            <legend><b>BOOKED BUS TICKETS</b></legend><br>
             <table class="tableStyle">
                 <tr>
-                    <th>Train ID</th>
-                    <th>Train Name</th>
-                    <th>Train Location</th>
+                    <th>Bus ID</th>
+                    <th>Bus Name</th>
+                    <th>Bus Location</th>
                     <th>Ticket ID</th>
                     <th>From</th>
                     <th>To</th>
@@ -64,14 +64,14 @@
                     <th>Time</th>
                 </tr>
                 <?php
-                $data = file_get_contents("Train_Tickets_Data.json");
+                $data = file_get_contents("Bus_Tickets_Data.json");
                 $data = json_decode($data, true);
                 foreach ($data as $row) {
                     if ($row['Booked_By'] == $_SESSION['email']) {
                         echo '<tr>
-                                   <td>' . $row["T_ID"] . '</td>
-                                   <td>' . $row["T_Name"] . '</td>
-                                   <td>' . $row["T_Location"] . '</td>
+                                   <td>' . $row["B_ID"] . '</td>
+                                   <td>' . $row["B_Name"] . '</td>
+                                   <td>' . $row["B_Location"] . '</td>
                                    <td>' . $row["From"] . '</td>
                                    <td>' . $row["To"] . '</td>
                                    <td>' . $row["Price"] . '</td>

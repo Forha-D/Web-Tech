@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <?php require_once 'Controller/updateTrainTicketsController.php'; ?>
+    <?php require_once 'Controller/updateBusTicketsController.php'; ?>
 
     <?php include 'Header.php'; ?>
 
@@ -31,11 +31,11 @@
             echo $error;
         }
         ?>
-
-        Go back to : <a href="Train_Manager_Home.php">Home</a><br><br>
+        
+        Go back to : <a href="Bus_Manager_Home.php">Home</a><br><br>
 
         <fieldset>
-            <legend><b>UPDATE TICKETS FOR TRAIN</b></legend><br>
+            <legend><b>UPDATE TICKETS FOR BUS</b></legend><br>
             <label>Ticket ID: </label>
             <input type="text" name="ticketId" value="<?php echo $ticketId ?>"><span class="red">
                 <?php
@@ -45,19 +45,10 @@
                 ?></span>
             <input type="submit" name="search" value="Search" class="btn btn-info" />
             <hr>
-          <label>Train Id: </label>
-            <input type="text" name="trainId" value="<?php echo $trainId ?>"><span class="red">
-                <?php
-                if ($trainIdErr) {
-                    echo $trainIdErr;
-                }
-                ?></span>
-            <hr>
 
-           
-
+        
             <label>From: </label>
-            <select name="trainFrom">
+            <select name="from">
                 <option value="<?php echo $from ?>"><?php echo $from ?></option>
                 <option value="Dhaka">Dhaka</option>
                 <option value="Barishal">Barishal</option>
@@ -75,7 +66,7 @@
             <hr>
 
             <label>To: </label>
-            <select name="trainTo">
+            <select name="to">
                 <option value="<?php echo $to ?>"><?php echo $to ?></option>
                 <option value="Dhaka">Dhaka</option>
                 <option value="Barishal">Barishal</option>

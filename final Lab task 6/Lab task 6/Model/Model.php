@@ -88,19 +88,19 @@ function deletetrain($trainId)
 function addTrainTicket($data)
 {
     $conn = db_conn();
-    $selectQuery = "INSERT into tickets (location_to, location_from, date, time, price, transportType, bookedBy, t_id) VALUES (:trainTo, :trainFrom, :date , :time, :price, :tType, :bookedBy, :trainId)";
+    $selectQuery = "INSERT into tickets (location_from, location_to, date, time, price, transportType, bookedBy, t_id) VALUES (:trainTo, :trainFrom, :date , :time, :price, :tType, :bookedBy, :trainId)";
 
     try {
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([
+            ':trainFrom'               =>        test_input($data["trainFrom"]),
             ':trainTo'                 =>        test_input($data["trainTo"]),
-            ':trainFrom'               =>        test_input($data["trainFrom"]),     
             ':date'                  =>        test_input($data["date"]),
             ':time'                  =>        test_input($data["time"]),
             ':price'                 =>        test_input($data["price"]),
             ':tType'                 =>        "Train",
             ':bookedBy'              =>        "",
-             ':trainId'                 =>        test_input($data["trainId"])
+            // ':trainId'                 =>        test_input($data["trainId"])
         ]);
     } catch (PDOException $e) {
         echo $e->getMessage();

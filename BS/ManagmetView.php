@@ -13,9 +13,9 @@
         Menu
         <hr>
         <ul>
-            <li><a href="Add_Train_Tickets.php">Book bus tickets</a></li>
-            <li><a href="Delete_Train_Tickets.php">Book train tickets</a></li>
-            <li><a href="Update_Train_Tickets.php">Book plain tickets</a></li>
+            <li><a href="Add_Bus_Tickets.php">Book bus tickets</a></li>
+            <li><a href="Delete_Bus_Tickets.php">Book train tickets</a></li>
+            <li><a href="Update_Bus_Tickets.php">Book plain tickets</a></li>
                   
 
           </ul>

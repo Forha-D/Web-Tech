@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delate train ticket</title>
+    <title>Delte train infromation</title>
     <style type="text/css">
         .red {
             color: red;
@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <?php require_once 'Controller/deleteTrainTicketsController.php'; ?>
+    <?php require_once 'Controller/deleteTraincontroller.php'; ?>
 
     <?php include 'Header.php'; ?>
 
@@ -36,11 +36,11 @@
 
         <fieldset>
             <legend><b>DELETE_INFO</b></legend><br>
-            <label>Ticket_ID: </label>
-            <input type="text" name="ticketId"><span class="red">
+            <label>Train Id: </label>
+            <input type="text" name="trainId"><span class="red">
                 <?php
-                if ($ticketIdErr) {
-                    echo $ticketIdErr;
+                if ($trainIdErr) {
+                    echo $trainIdErr;
                 }
                 ?></span>
             <hr>

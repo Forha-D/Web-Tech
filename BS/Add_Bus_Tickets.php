@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Update tickest</title>
+    <title>Add Bus Ticket</title>
     <style type="text/css">
         .red {
             color: red;
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <?php require_once 'Controller/updateTrainTicketsController.php'; ?>
+    <?php require_once 'Controller/addBusTicketsController.php'; ?>
 
     <?php include 'Header.php'; ?>
 
@@ -32,33 +32,43 @@
         }
         ?>
 
-        Go back to : <a href="Train_Manager_Home.php">Home</a><br><br>
+        Go back to : <a href="Bus_Manager_Home.php">Home</a><br><br>
 
         <fieldset>
-            <legend><b>UPDATE TICKETS FOR TRAIN</b></legend><br>
-            <label>Ticket ID: </label>
-            <input type="text" name="ticketId" value="<?php echo $ticketId ?>"><span class="red">
+            <legend><b>ADD TICKETS FOR BUS</b></legend><br>
+            
+
+            <label>Bus Name: </label>
+            <input type="text" name="busName"><span class="red">
                 <?php
-                if ($ticketIdErr) {
-                    echo $ticketIdErr;
-                }
-                ?></span>
-            <input type="submit" name="search" value="Search" class="btn btn-info" />
-            <hr>
-          <label>Train Id: </label>
-            <input type="text" name="trainId" value="<?php echo $trainId ?>"><span class="red">
-                <?php
-                if ($trainIdErr) {
-                    echo $trainIdErr;
+                if ($busNameErr) {
+                    echo $busNameErr;
                 }
                 ?></span>
             <hr>
 
-           
+            <label>Bus Location: </label>
+            <select name="busLocation">
+                <option value="" disabled selected>Select a location</option>
+                <option value="Dhaka">Dhaka</option>
+                <option value="Barishal">Barishal</option>
+                <option value="Cumilla">Cumilla</option>
+                <option value="Sylet">Sylet</option>
+                <option value="Bagura">Bagura</option>
+                <option value="khulna">khulna</option>
+                <option value="Chittagong">Chittagong</option>
+            </select><span class="red">
+                <?php
+                if ($busLocationErr) {
+                    echo $busLocationErr;
+                }
+                ?></span>
+            <hr>
+
 
             <label>From: </label>
-            <select name="trainFrom">
-                <option value="<?php echo $from ?>"><?php echo $from ?></option>
+            <select name="busFrom">
+                <option value="" disabled selected>Select a location</option>
                 <option value="Dhaka">Dhaka</option>
                 <option value="Barishal">Barishal</option>
                 <option value="Cumilla">Cumilla</option>
@@ -75,8 +85,8 @@
             <hr>
 
             <label>To: </label>
-            <select name="trainTo">
-                <option value="<?php echo $to ?>"><?php echo $to ?></option>
+            <select name="busTo">
+                <option value="" disabled selected>Select a location</option>
                 <option value="Dhaka">Dhaka</option>
                 <option value="Barishal">Barishal</option>
                 <option value="Cumilla">Cumilla</option>
@@ -93,21 +103,21 @@
             <hr>
 
             <label>Price: </label>
-            <input type="text" name="price" value="<?php echo $price ?>" /><br />
+            <input type="text" name="price" /><br />
             <hr>
 
             <fieldset>
                 <legend>
                     <label>Date: </label>
                 </legend>
-                <input type="Date" name="date" value="<?php echo $date ?>" /> (mm/dd/yyyy)<br />
+                <input type="Date" name="date" /> (mm/dd/yyyy)<br />
             </fieldset>
 
             <fieldset>
                 <legend>
                     <label>Time: </label>
                 </legend>
-                <input type="time" name="time" value="<?php echo $time ?>" /> (mm:ss am/pm)<br />
+                <input type="time" name="time" /> (mm:ss am/pm)<br />
             </fieldset>
             <hr>
 

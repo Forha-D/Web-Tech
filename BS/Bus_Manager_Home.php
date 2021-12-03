@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Train Manager Home</title>
+    <title>Bus Manager Home</title>
 </head>
 
 <body>
@@ -15,16 +15,13 @@
 
     if (isset($_SESSION['email'])) {
         echo '<span style="display:inline-block; width:100%;text-align:left; height: 100%; padding:10px; border-right:2px solid black">';
-        echo '*******WELLCOME TRAIN MANAGERS*******';
+        echo '------WELLCOME BUS MANAGERS---------';
         echo '<hr>';
         echo '<ul>';
-        echo '<li><a href="Add_Train.php">Add Train</a></li>';
-        echo '<li><a href="Update_Train.php">Update Train</a></li>';
-        echo '<li><a href="Remove_Train.php">Remove Train</a></li>';
-        echo '<li><a href="Add_Train_Tickets.php">Add Train Tickets</a></li>';
-        echo '<li><a href="Update_Train_Tickets.php">Update Train Tickets</a></li>';
-        echo '<li><a href="Delete_Train_Tickets.php">Delete Train Tickets</a></li>';
-       
+        echo '<li><a href="Add_Bus_Tickets.php">Add Bus Tickets</a></li>';
+        echo '<li><a href="Update_Bus_Tickets.php">Update Bus Tickets</a></li>';
+        echo '<li><a href="Delete_Bus_Tickets.php">Delete Bus Tickets</a></li>';
+        echo '<li><a href="View_Add_Tickets.php">View Add Bus Tickets</a></li>';
 
 
         echo '</ul>';

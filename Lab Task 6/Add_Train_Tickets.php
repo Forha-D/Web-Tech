@@ -35,8 +35,9 @@
         Go back to : <a href="Train_Manager_Home.php">Home</a><br><br>
 
         <fieldset>
-            <legend><b>ADD TICKETS FOR Train</b></legend><br>
-            <label>Train ID: </label>
+            <legend><b>ADD TICKETS FOR TRAIN</b></legend><br>
+
+            <label>Train Id: </label>
             <input type="text" name="trainId"><span class="red">
                 <?php
                 if ($trainIdErr) {
@@ -45,41 +46,6 @@
                 ?></span>
             <hr>
 
-            <label>Train Name: </label>
-            <input type="text" name="trainName"><span class="red">
-                <?php
-                if ($trainNameErr) {
-                    echo $trainNameErr;
-                }
-                ?></span>
-            <hr>
-
-            <label>Train Location: </label>
-            <select name="trainLocation">
-                <option value="" disabled selected>Select a location</option>
-                <option value="Dhaka">Dhaka</option>
-                <option value="Barishal">Barishal</option>
-                <option value="Cumilla">Cumilla</option>
-                <option value="Sylet">Sylet</option>
-                <option value="Bagura">Bagura</option>
-                <option value="khulna">khulna</option>
-                <option value="Chittagong">Chittagong</option>
-            </select><span class="red">
-                <?php
-                if ($trainLocationErr) {
-                    echo $trainLocationErr;
-                }
-                ?></span>
-            <hr>
-
-            <label>Ticket ID: </label>
-            <input type="text" name="ticketId"><span class="red">
-                <?php
-                if ($ticketIdErr) {
-                    echo $ticketIdErr;
-                }
-                ?></span>
-            <hr>
 
             <label>From: </label>
             <select name="trainFrom">

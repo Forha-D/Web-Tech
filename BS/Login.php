@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mid Project</title>
+    <title>Bus_Managers_Login</title>
     <style>
         .error {
             color: red;
@@ -14,44 +14,27 @@
 </head>
 
 <body>
-    <?php
-    include 'Header.php';
-    require_once 'Model/db_connect.php';
-    ?>
+    <?php include 'Header.php'; ?>
 
     <?php
-
     session_start();
-
     $msg = '';
+  
 
     if (isset($_POST['email']) && isset($_POST['password'])) {
-        $conn = db_conn();
-        $selectQuery = "SELECT * FROM `train_manager` where tm_email = ?";
-
-        try {
-            $stmt = $conn->prepare($selectQuery);
-            $stmt->execute([$_POST['email']]);
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($row["tm_email"] == $_POST['email'] && $row["tm_password"] == $_POST['password']) {
-            $_SESSION['email'] = $row["tm_email"];
-            $_SESSION['password'] = $row["tm_password"];
-
+        if ($_POST['email'] == ""&& $_POST['password'] =="") {
+            $_SESSION['email'] = "";
+            $_SESSION['password'] = "";
             if (!empty($_POST['rememberMe'])) {
-                setcookie("email", $_POST['email'], time() + 60);
-                setcookie("password", $_POST['password'], time() + 60);
+                setcookie("email", $_POST['email'], time() + 10);
+                setcookie("password", $_POST['password'], time() + 10);
                 echo "Cookie set successfully";
             } else {
                 setcookie("email", "");
                 setcookie("password", "");
                 echo "Cookie not set";
             }
-
-            header("location:Train_Manager_Home.php");
+            header("location:Bus_Manager_Home.php");
         } else {
             $msg = "Username or password invalid";
         }
@@ -64,7 +47,7 @@
             <legend><b>LOGIN</b></legend>
             Email: <input type="text" name="email" value="<?php if (isset($_COOKIE['email'])) {
                                                                 echo $_COOKIE['email'];
-                                                            } ?>"><br><br>
+                                                            } ?>"><br>
 
             Password: <input type="password" name="password" id="pass" value="<?php if (isset($_COOKIE['password'])) {
                                                                                     echo $_COOKIE['password'];
@@ -75,9 +58,9 @@
             <hr>
 
             <input type="checkbox" name="rememberMe" value="rememberMe">
-            <label>Remember me for a mintute</label><br><br>
+            <label>Remember Me</label><br><br>
 
-            <input type="submit" name="submit" value="Login">
+            <input type="submit" name="submit" value="Submit">
             <a href="Forget_Password.php">Forgot password?</a>
         </fieldset>
         <script>

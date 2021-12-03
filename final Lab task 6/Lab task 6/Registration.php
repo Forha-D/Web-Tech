@@ -19,6 +19,11 @@
 
 <body>
     <?php include 'Header.php'; ?>
+    <?php
+    if (!isset($_SESSION['email'])) {
+        header("location:Login.php");
+    }
+    ?>
 
     <?php require_once 'Controller/addTrainManager.php'; ?>
 

@@ -2,29 +2,29 @@
 session_start();
 require_once 'Model/Model.php';
 require_once 'Model/db_connect.php';
-$msg =  $ticketIdErr = '';
+$msg =  $trainIdErr = '';
 $valid = 1;
 if (isset($_POST["submit"])) {
-    if (empty($_POST["ticketId"])) {
-        $ticketIdErr = "*Please enter ticket ID";
+    if (empty($_POST["trainId"])) {
+        $trainIdErr = "*Please enter train ID";
         $valid = 0;
     }
-    $ticketId = $_POST["ticketId"];
+    $trainId= $_POST["trainId"];
 
     $conn = db_conn();
-    $selectQuery = "SELECT * FROM `tickets` where ticket_id = ?";
+    $selectQuery = "SELECT * FROM `train` where t_id = ?";
     try {
         $stmt = $conn->prepare($selectQuery);
-        $stmt->execute([$_POST['ticketId']]);
+        $stmt->execute([$_POST['trainId']]);
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
 
 
     if ($valid) {
-        $msg = deletetraintickes($ticketId);
+        $msg = deletetrain($trainId);
     } else {
         $msg = '<span class="red">delete succesfully</span>';
     }
-
+  
 }

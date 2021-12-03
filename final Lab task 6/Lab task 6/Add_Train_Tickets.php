@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Update tickest</title>
+    <title>Add Train Ticket</title>
     <style type="text/css">
         .red {
             color: red;
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <?php require_once 'Controller/updateTrainTicketsController.php'; ?>
+    <?php require_once 'Controller/addTrainTicketsController.php'; ?>
 
     <?php include 'Header.php'; ?>
 
@@ -35,30 +35,14 @@
         Go back to : <a href="Train_Manager_Home.php">Home</a><br><br>
 
         <fieldset>
-            <legend><b>UPDATE TICKETS FOR TRAIN</b></legend><br>
-            <label>Ticket ID: </label>
-            <input type="text" name="ticketId" value="<?php echo $ticketId ?>"><span class="red">
-                <?php
-                if ($ticketIdErr) {
-                    echo $ticketIdErr;
-                }
-                ?></span>
-            <input type="submit" name="search" value="Search" class="btn btn-info" />
-            <hr>
-          <label>Train Id: </label>
-            <input type="text" name="trainId" value="<?php echo $trainId ?>"><span class="red">
-                <?php
-                if ($trainIdErr) {
-                    echo $trainIdErr;
-                }
-                ?></span>
-            <hr>
+            <legend><b>ADD TICKETS FOR TRAIN</b></legend><br>
 
-           
+            
+
 
             <label>From: </label>
             <select name="trainFrom">
-                <option value="<?php echo $from ?>"><?php echo $from ?></option>
+                <option value="" disabled selected>Select a location</option>
                 <option value="Dhaka">Dhaka</option>
                 <option value="Barishal">Barishal</option>
                 <option value="Cumilla">Cumilla</option>
@@ -76,7 +60,7 @@
 
             <label>To: </label>
             <select name="trainTo">
-                <option value="<?php echo $to ?>"><?php echo $to ?></option>
+                <option value="" disabled selected>Select a location</option>
                 <option value="Dhaka">Dhaka</option>
                 <option value="Barishal">Barishal</option>
                 <option value="Cumilla">Cumilla</option>
@@ -93,21 +77,21 @@
             <hr>
 
             <label>Price: </label>
-            <input type="text" name="price" value="<?php echo $price ?>" /><br />
+            <input type="text" name="price" /><br />
             <hr>
 
             <fieldset>
                 <legend>
                     <label>Date: </label>
                 </legend>
-                <input type="Date" name="date" value="<?php echo $date ?>" /> (mm/dd/yyyy)<br />
+                <input type="Date" name="date" /> (mm/dd/yyyy)<br />
             </fieldset>
 
             <fieldset>
                 <legend>
                     <label>Time: </label>
                 </legend>
-                <input type="time" name="time" value="<?php echo $time ?>" /> (mm:ss am/pm)<br />
+                <input type="time" name="time" /> (mm:ss am/pm)<br />
             </fieldset>
             <hr>
 

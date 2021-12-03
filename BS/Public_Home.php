@@ -13,7 +13,7 @@
 
     <span style="display:inline-block; width:100%;text-align:center; height: 50%; padding:10px">
         <?php
-        echo "<h2>Wellcome to Train managers</h2>";
+        echo "<h2>Wellcome to Busmanagers</h2>";
         echo '<img src="Logos/Public_Home_Logo.jpg" alt="Public Home Logo" width="50%" height="100%">'
         ?>
     </span>

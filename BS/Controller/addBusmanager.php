@@ -8,6 +8,8 @@ $msg = $nameErr = $emailErr  = $passErr = $conPassErr = '';
 $valid = 1;
 
 if (isset($_POST["submit"])) {
+    
+
     if (empty($_POST["email"])) {
         $emailErr = "*Please enter your email address";
         $valid = 0;
@@ -25,7 +27,8 @@ if (isset($_POST["submit"])) {
     } else if (!preg_match('/[A-Z]+/', $_POST["password"])) {
         $passErr = "*Password must contain at least one upper case letter, one lower case letter and one numeric character";
         $valid = 0;
-    } else if (!preg_match('/[0-9]+/', $_POST["password"])) {
+    }
+    else if (!preg_match('/[0-9]+/', $_POST["password"])) {
         $passErr = "*Password must contain at least one upper case letter, one lower case letter and one numeric character";
         $valid = 0;
     }
@@ -38,13 +41,15 @@ if (isset($_POST["submit"])) {
         $valid = 0;
     }
 
-    if ($valid) {
 
+    if ($valid) {
+       
         $_SESSION['email'] = test_input($_POST["email"]);
         $_SESSION['password'] = test_input($_POST["password"]);
-
-        $msg = addTrainManager($_POST);
-        header("location:Train_Manager_Home.php");
+    
+        $msg = addBusmanager($_POST);
+        header("location:Bus_Manager_Home.php");
+        
     } else {
         $msg = '<span class="red">Registration failed</span>';
     }
