@@ -13,37 +13,37 @@ function validEmail() {
 }
 
 function validPass() {
-    if (document.getElementById("password").value == "") {
+    if (document.getElementById("pass").value == "") {
         document.getElementById("passErr").innerHTML = "*Password cannot be blank";
-        document.getElementById("password").style.borderColor = "red";
-    } else if (document.getElementById("password").value.length < 5) {
+        document.getElementById("pass").style.borderColor = "red";
+    } else if (document.getElementById("pass").value.length < 5) {
         document.getElementById("passErr").innerHTML = "*Password must not be less than six (6) characters";
-        document.getElementById("password").style.borderColor = "red";
-    } else if (!document.getElementById("password").value.match(/[A-Z]+/)) {
+        document.getElementById("pass").style.borderColor = "red";
+    } else if (!document.getElementById("pass").value.match(/[A-Z]+/)) {
         document.getElementById("passErr").innerHTML = "*Password must contain at least one upper case letter, one lower case letter and one numeric character";
-        document.getElementById("password").style.borderColor = "red";
-    } else if (!document.getElementById("password").value.match(/[a-z]+/)) {
+        document.getElementById("pass").style.borderColor = "red";
+    } else if (!document.getElementById("pass").value.match(/[a-z]+/)) {
         document.getElementById("passErr").innerHTML = "*Password must contain at least one upper case letter, one lower case letter and one numeric character";
-        document.getElementById("password").style.borderColor = "red";
+        document.getElementById("pass").style.borderColor = "red";
     } else if (!document.getElementById("pass").value.match(/[0-9]+/)) {
         document.getElementById("passErr").innerHTML = "*Password must contain at least one upper case letter, one lower case letter and one numeric character";
-        document.getElementById("password").style.borderColor = "red";
+        document.getElementById("pass").style.borderColor = "red";
     } else {
         document.getElementById("passErr").innerHTML = "";
-        document.getElementById("password").style.borderColor = "purple";
+        document.getElementById("pass").style.borderColor = "purple";
     }
 }
 
 function validConPass() {
-    if (document.getElementById("confirmPassword").value == "") {
+    if (document.getElementById("conPass").value == "") {
         document.getElementById("conPassErr").innerHTML = "*Confirm Password cannot be blank";
-        document.getElementById("confirmPassword").style.borderColor = "red";
-    } else if (document.getElementById("confirmPassword").value != document.getElementById("pass").value) {
+        document.getElementById("conPass").style.borderColor = "red";
+    } else if (document.getElementById("conPass").value != document.getElementById("pass").value) {
         document.getElementById("conPassErr").innerHTML = "*Password and confirm password does not match";
-        document.getElementById("confirmPassword").style.borderColor = "red";
+        document.getElementById("conPass").style.borderColor = "red";
     } else {
         document.getElementById("conPassErr").innerHTML = "";
-        document.getElementById("confirmPassword").style.borderColor = "purple";
+        document.getElementById("conPass").style.borderColor = "purple";
     }
 }
 
